@@ -53,14 +53,25 @@ MgFibonacciCalculatorTest >> testGenerationCost [
 ]
 
 { #category : #running }
-MgFibonacciCalculatorTest >> testSpeed [
-	| iterations number  generativeRunDuration recursiveRunDuration |
-	iterations := 50.
+MgFibonacciCalculatorTest >> testSpeedGenerativeVsIterative [
+	| generativeRunDuration iterativeRunDuration number repetitions |
+	number := 200.
+	repetitions := 5000.
+	generativeRunDuration := self timeToRunFibo: number with: compilingFibo repeat: repetitions.
+	iterativeRunDuration := self timeToRunFibo: number with: iterativeFibo repeat: repetitions.
+	self assert: generativeRunDuration < iterativeRunDuration.
+
+]
+
+{ #category : #running }
+MgFibonacciCalculatorTest >> testSpeedGenerativeVsRecursive [
+	| generativeRunDuration recursiveRunDuration  number repetitions |
 	number := 30.
-	generativeRunDuration := [ iterations timesRepeat: [compilingFibo fibo: number] ] timeToRun.
-	recursiveRunDuration := [ iterations timesRepeat: [recursiveFibo fibo: number] ] timeToRun. 
+	repetitions := 50.
+	generativeRunDuration := self timeToRunFibo: number with: compilingFibo repeat: repetitions.
+	recursiveRunDuration := self timeToRunFibo: number with: recursiveFibo repeat: repetitions.
 	self assert: generativeRunDuration < recursiveRunDuration.
-	
+
 ]
 
 { #category : #running }
@@ -70,4 +81,10 @@ MgFibonacciCalculatorTest >> testValues [
 			self assert: (each fibo: number - 1) equals: expectedFibo.
 		]
 	]
+]
+
+{ #category : #running }
+MgFibonacciCalculatorTest >> timeToRunFibo: number with: calculator repeat: iterations [
+	^[iterations timesRepeat: [ calculator fibo: number ]] timeToRun. 
+
 ]
