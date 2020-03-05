@@ -1,3 +1,3 @@
 # Pharo Examples
 
-Code illustrating various concepts of the Pharo language
+Code illustrating various concepts of the [Pharo language](http://pharo.org)
