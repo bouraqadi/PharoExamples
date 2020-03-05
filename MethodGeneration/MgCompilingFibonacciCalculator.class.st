@@ -14,5 +14,11 @@ MgCompilingFibonacciCalculator >> generateMethod: selector returning: result [
 			<< $^;
 			print: result
 	].
-	self class compileSilently: fiboMethodSource classified: #generated
+	SystemAnnouncer uniqueInstance suspendAllWhile: [
+		self class 
+			compile: fiboMethodSource 
+			classified: #generated 
+			withStamp: nil 
+			notifying: nil 
+			logSource: false]
 ]
