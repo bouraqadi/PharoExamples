@@ -27,23 +27,28 @@ MgGenerativeFibonacciCalculator >> basicFibo: anInteger [
 
 { #category : #calculating }
 MgGenerativeFibonacciCalculator >> fibo: anInteger [
+	| fiboSelector |
 	anInteger < 2 ifTrue: [ ^anInteger ].
-	^ [ self perform: (self fiboSelectorFor: anInteger) ]
+	fiboSelector := self fiboSelectorFor: anInteger.
+	^ [ self perform: fiboSelector ]
 		on: MessageNotUnderstood
 		do: [ :exception | 
-			self generateFiboMethodFor: anInteger.
+			self generateFiboMethod: fiboSelector for: anInteger.
 			exception retry ]
 ]
 
 { #category : #calculating }
 MgGenerativeFibonacciCalculator >> fiboSelectorFor: anInteger [
-	^ #fibo , anInteger asString
+	^ Symbol streamContents: [ :str | 
+		str 
+			<< #fibo;
+			print: anInteger]
 ]
 
 { #category : #calculating }
-MgGenerativeFibonacciCalculator >> generateFiboMethodFor: anInteger [
+MgGenerativeFibonacciCalculator >> generateFiboMethod: fiboSelector for: anInteger [
 	^self 
-		generateMethod: (self fiboSelectorFor: anInteger)
+		generateMethod: fiboSelector
 		returning: (self basicFibo: anInteger)
 ]
 
