@@ -1,5 +1,5 @@
 Trait {
-	#name : #TGpsVehicle,
+	#name : #MiTGpsVehicle,
 	#instVars : [
 		'gps'
 	],
@@ -7,11 +7,11 @@ Trait {
 }
 
 { #category : #localizing }
-TGpsVehicle >> currentPosition [
+MiTGpsVehicle >> currentPosition [
 	^gps currentPosition
 ]
 
 { #category : #localizing }
-TGpsVehicle >> itineraryTo: goalPosition [
+MiTGpsVehicle >> itineraryTo: goalPosition [
 	^gps itineraryTo: goalPosition
 ]

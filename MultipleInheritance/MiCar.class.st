@@ -1,6 +1,6 @@
 Class {
-	#name : #Car,
-	#superclass : #Vehicle,
+	#name : #MiCar,
+	#superclass : #MiVehicle,
 	#instVars : [
 		'gearbox'
 	],
@@ -8,11 +8,11 @@ Class {
 }
 
 { #category : #driving }
-Car >> break: aDuration [
+MiCar >> break: aDuration [
 	Transcript cr; show: 'Breaking for '; show: aDuration
 ]
 
 { #category : #driving }
-Car >> shiftTo: aGear [
+MiCar >> shiftTo: aGear [
 	Transcript cr; show: 'Shifting to '; show: aGear
 ]

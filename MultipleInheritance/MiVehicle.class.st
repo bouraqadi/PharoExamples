@@ -1,5 +1,5 @@
 Class {
-	#name : #Vehicle,
+	#name : #MiVehicle,
 	#superclass : #Object,
 	#instVars : [
 		'seatsCount',
@@ -11,41 +11,41 @@ Class {
 }
 
 { #category : #accessing }
-Vehicle >> passengers [
+MiVehicle >> passengers [
 	^ passengers
 ]
 
 { #category : #accessing }
-Vehicle >> passengers: anObject [
+MiVehicle >> passengers: anObject [
 	passengers := anObject
 ]
 
 { #category : #accessing }
-Vehicle >> seatsCount [
+MiVehicle >> seatsCount [
 	^ seatsCount
 ]
 
 { #category : #accessing }
-Vehicle >> seatsCount: anObject [
+MiVehicle >> seatsCount: anObject [
 	seatsCount := anObject
 ]
 
 { #category : #accessing }
-Vehicle >> speed [
+MiVehicle >> speed [
 	^ speed
 ]
 
 { #category : #accessing }
-Vehicle >> speed: anObject [
+MiVehicle >> speed: anObject [
 	speed := anObject
 ]
 
 { #category : #accessing }
-Vehicle >> throttle [
+MiVehicle >> throttle [
 	^ throttle
 ]
 
 { #category : #accessing }
-Vehicle >> throttle: anObject [
+MiVehicle >> throttle: anObject [
 	throttle := anObject
 ]

@@ -1,6 +1,6 @@
 Class {
-	#name : #Plane,
-	#superclass : #Vehicle,
+	#name : #MiPlane,
+	#superclass : #MiVehicle,
 	#instVars : [
 		'wingspan',
 		'areFlapsExtended'
@@ -9,11 +9,11 @@ Class {
 }
 
 { #category : #driving }
-Plane >> extendFlaps [
+MiPlane >> extendFlaps [
 	areFlapsExtended := true
 ]
 
 { #category : #driving }
-Plane >> retractFlaps [
+MiPlane >> retractFlaps [
 	areFlapsExtended := false
 ]

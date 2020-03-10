@@ -1,5 +1,5 @@
 Trait {
-	#name : #TSelfDrivingVehicle,
+	#name : #MiTSelfDrivingVehicle,
 	#instVars : [
 		'automaticPilot'
 	],
@@ -7,6 +7,6 @@ Trait {
 }
 
 { #category : #driving }
-TSelfDrivingVehicle >> follow: anItinerary [
+MiTSelfDrivingVehicle >> follow: anItinerary [
 	Transcript cr; show: 'Following itinerary '; show: anItinerary
 ]
