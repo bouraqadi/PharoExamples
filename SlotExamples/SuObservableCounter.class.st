@@ -6,7 +6,7 @@ Class {
 	#instVars : [
 		'#count => ObservableSlot'
 	],
-	#category : #SlotUsage
+	#category : #SlotExamples
 }
 
 { #category : #example }

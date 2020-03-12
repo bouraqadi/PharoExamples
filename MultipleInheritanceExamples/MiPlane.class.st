@@ -5,7 +5,7 @@ Class {
 		'wingspan',
 		'areFlapsExtended'
 	],
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }
 
 { #category : #driving }

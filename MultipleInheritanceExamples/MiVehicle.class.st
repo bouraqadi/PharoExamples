@@ -7,7 +7,7 @@ Class {
 		'speed',
 		'throttle'
 	],
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }
 
 { #category : #accessing }

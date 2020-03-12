@@ -1,7 +1,7 @@
 Class {
 	#name : #MgCompilingFibonacciCalculator,
 	#superclass : #MgGenerativeFibonacciCalculator,
-	#category : #MethodGeneration
+	#category : #MethodGenerationExamples
 }
 
 { #category : #calculating }

@@ -11,8 +11,9 @@ BaselineOfPharoExamples >> baseline: spec [
 		for: #common
 		do: [
 			spec
-				package: 'MethodGeneration';
-				package: 'MultipleInheritance';
-				package: 'SlotUsage'
+				package: 'MethodGenerationExamples';
+				package: 'MultipleInheritanceExamples';
+				package: 'SlotExamples';
+				package: 'ContinuationExamples'
 		]
 ]

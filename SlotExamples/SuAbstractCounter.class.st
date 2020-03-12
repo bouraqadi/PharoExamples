@@ -4,7 +4,7 @@ Subclasses must implement count and count: methods
 Class {
 	#name : #SuAbstractCounter,
 	#superclass : #Object,
-	#category : #SlotUsage
+	#category : #SlotExamples
 }
 
 { #category : #accessing }

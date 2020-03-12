@@ -4,7 +4,7 @@ Trait {
 		'x',
 		'yA'
 	],
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }
 
 { #category : #accessing }

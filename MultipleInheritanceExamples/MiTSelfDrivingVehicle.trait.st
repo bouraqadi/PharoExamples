@@ -3,7 +3,7 @@ Trait {
 	#instVars : [
 		'automaticPilot'
 	],
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }
 
 { #category : #driving }

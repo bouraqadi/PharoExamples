@@ -8,7 +8,7 @@ Class {
 		'compilingFibo',
 		'cloningFibo'
 	],
-	#category : #MethodGeneration
+	#category : #MethodGenerationExamples
 }
 
 { #category : #running }

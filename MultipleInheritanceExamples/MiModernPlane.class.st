@@ -3,5 +3,5 @@ Class {
 	#superclass : #MiPlane,
 	#traits : 'MiTGpsVehicle + MiTSelfDrivingVehicle',
 	#classTraits : 'MiTGpsVehicle classTrait + MiTSelfDrivingVehicle classTrait',
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }

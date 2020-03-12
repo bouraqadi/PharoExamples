@@ -3,7 +3,7 @@ Trait {
 	#instVars : [
 		'gps'
 	],
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }
 
 { #category : #localizing }

@@ -4,7 +4,7 @@ Trait {
 		'y',
 		'z'
 	],
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }
 
 { #category : #accessing }

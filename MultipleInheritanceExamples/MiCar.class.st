@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'gearbox'
 	],
-	#category : #MultipleInheritance
+	#category : #MultipleInheritanceExamples
 }
 
 { #category : #driving }

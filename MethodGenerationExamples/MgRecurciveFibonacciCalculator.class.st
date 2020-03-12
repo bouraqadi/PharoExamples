@@ -1,7 +1,7 @@
 Class {
 	#name : #MgRecurciveFibonacciCalculator,
-	#superclass : #MgFibonacciCalculator,
-	#category : #MethodGeneration
+	#superclass : #Object,
+	#category : #MethodGenerationExamples
 }
 
 { #category : #calculating }

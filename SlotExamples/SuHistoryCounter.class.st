@@ -4,7 +4,7 @@ Class {
 	#instVars : [
 		'#count => HistorySlot size: 5'
 	],
-	#category : #SlotUsage
+	#category : #SlotExamples
 }
 
 { #category : #example }
