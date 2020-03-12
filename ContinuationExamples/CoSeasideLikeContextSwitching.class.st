@@ -2,8 +2,8 @@
 Example
 
 ""Evaluate this first""
-s := CoContextSwitching new.
-result := s call: [Transcript cr; show: 'Compuation stops here' ].
+s := CoSeasideLikeContextSwitching new.
+result := s call: [Transcript cr; show: 'Computation stops here' ].
 Transcript 
 	cr; 
 	show: 'Computation resumed';
@@ -22,19 +22,21 @@ Class {
 	#category : #ContinuationExamples
 }
 
-{ #category : #'ffi-calls' }
+{ #category : #'call-response' }
 CoSeasideLikeContextSwitching >> answer: result [
-	continuation value: {false. result}
+	continuation value: {true. result}
 ]
 
-{ #category : #'ffi-calls' }
+{ #category : #'call-response' }
 CoSeasideLikeContextSwitching >> call: aBlock [
-	| response |
+	| response rootContext |
 	response := Continuation currentDo: [: cc |
 		continuation := cc.
-		cc value: #(true)].
-	response first ifTrue: [
-		thisContext terminateTo: thisContext sender sender.
-		^aBlock value].
-	^response last
+		cc value: #(false)].
+	response first ifTrue: [^response last].
+	rootContext := thisContext.
+	[rootContext sender sender isNil] whileFalse: [ rootContext := rootContext sender ].
+	thisContext swapSender: rootContext.
+	aBlock value.
+	
 ]
