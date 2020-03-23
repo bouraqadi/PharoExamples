@@ -14,6 +14,7 @@ BaselineOfPharoExamples >> baseline: spec [
 				package: 'MethodGenerationExamples';
 				package: 'MultipleInheritanceExamples';
 				package: 'SlotExamples';
-				package: 'ContinuationExamples'
+				package: 'ContinuationExamples';
+				package: 'MessageExamples'.
 		]
 ]
