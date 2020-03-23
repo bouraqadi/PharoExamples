@@ -10,7 +10,7 @@ Class {
 { #category : #tests }
 CoAnyTimePrimeGeneratorTest >> setUp [
 	super setUp.
-	generator := CoAnyTimPrimesGenerator new.
+	generator := CoAnyTimePrimesGenerator new.
 
 ]
 

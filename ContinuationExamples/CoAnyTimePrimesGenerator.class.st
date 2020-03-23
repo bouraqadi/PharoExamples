@@ -4,7 +4,7 @@ Anytime prime number generators. Finds the largest prime within a finite amount 
 Computes prime numbers based on Sieve of Eratosthenes algorithm (https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 "
 Class {
-	#name : #CoAnyTimPrimesGenerator,
+	#name : #CoAnyTimePrimesGenerator,
 	#superclass : #Object,
 	#instVars : [
 		'isTimeToAnswer',
@@ -17,7 +17,7 @@ Class {
 }
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> basicFindMaxPrime [
+CoAnyTimePrimesGenerator >> basicFindMaxPrime [
 	[ 
 		currentUpBound := currentUpBound + 1000.
 		self primesUpTo: currentUpBound.
@@ -26,19 +26,19 @@ CoAnyTimPrimesGenerator >> basicFindMaxPrime [
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> findMaxPrime [
+CoAnyTimePrimesGenerator >> findMaxPrime [
 	^self findMaxPrimeWithin: 500 milliSeconds
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> findMaxPrimeWithin: aDuration [
+CoAnyTimePrimesGenerator >> findMaxPrimeWithin: aDuration [
 	searchDuration := aDuration.
 	startTime := self now.
 	^self basicFindMaxPrime
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> initialize [
+CoAnyTimePrimesGenerator >> initialize [
 	super initialize.
 	primes := OrderedCollection with: 2.
 	currentUpBound := 0.
@@ -47,27 +47,27 @@ CoAnyTimPrimesGenerator >> initialize [
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> isTimeToAnswer [
+CoAnyTimePrimesGenerator >> isTimeToAnswer [
 	^(self now - startTime) < searchDuration
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> maxPrime [
+CoAnyTimePrimesGenerator >> maxPrime [
 	^ primes last
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> now [
+CoAnyTimePrimesGenerator >> now [
 	^DateAndTime now
 ]
 
 { #category : #accessing }
-CoAnyTimPrimesGenerator >> primes [
+CoAnyTimePrimesGenerator >> primes [
 	^primes
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> primesUpTo: maxCandidate [
+CoAnyTimePrimesGenerator >> primesUpTo: maxCandidate [
 	| minCandidate candidates newPrime |
 	minCandidate := self maxPrime + 1.
 	candidates := (minCandidate to: maxCandidate) asOrderedCollection.
@@ -83,7 +83,7 @@ CoAnyTimPrimesGenerator >> primesUpTo: maxCandidate [
 ]
 
 { #category : #generating }
-CoAnyTimPrimesGenerator >> removeFrom: aCollection compositesOf: prime [
+CoAnyTimePrimesGenerator >> removeFrom: aCollection compositesOf: prime [
 	| max |
 	aCollection ifEmpty: [ ^self ].
 	max := aCollection last.
