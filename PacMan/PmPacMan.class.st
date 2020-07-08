@@ -13,12 +13,34 @@ PmPacMan >> cell [
 ]
 
 { #category : #accessing }
-PmPacMan >> cell: anObject [
-	cell := anObject.
-	cell add: self
+PmPacMan >> cell: newCell [
+	cell remove: self.
+	cell := newCell.
+
+]
+
+{ #category : #initialization }
+PmPacMan >> initialize [
+	super initialize.
+	cell := PmNullCell defaultInstance.
+]
+
+{ #category : #moving }
+PmPacMan >> moveDown [
+	cell neighborDown add: self
+]
+
+{ #category : #moving }
+PmPacMan >> moveLeft [
+	cell neighborLeft add: self
+]
+
+{ #category : #moving }
+PmPacMan >> moveRight [
+	cell neighborRight add: self
 ]
 
 { #category : #moving }
 PmPacMan >> moveUp [
-	^self
+	cell neighborUp add: self
 ]

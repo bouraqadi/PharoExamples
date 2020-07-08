@@ -10,9 +10,10 @@ Class {
 
 { #category : #initialization }
 PmGame >> addPacManAtCenter [
-	| halfLength |
+	| halfLength centerCell |
 	halfLength := board length//2.
-	pacMan cell: (board cellAt: halfLength@halfLength).
+	centerCell := board cellAtRow: halfLength column: halfLength.
+	centerCell add: pacMan.
 ]
 
 { #category : #accessing }
