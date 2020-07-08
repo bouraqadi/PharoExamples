@@ -5,7 +5,7 @@ Class {
 		'pacMan',
 		'board'
 	],
-	#category : #'PacMan-Kernel'
+	#category : #'PacMan-Models'
 }
 
 { #category : #initialization }

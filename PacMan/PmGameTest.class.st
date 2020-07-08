@@ -6,7 +6,7 @@ Class {
 		'pacMan',
 		'board'
 	],
-	#category : #'PacMan-Kernel'
+	#category : #'PacMan-Tests'
 }
 
 { #category : #tests }
@@ -71,6 +71,18 @@ PmGameTest >> testMoveToEmptyCell [
 	self assertPositionChangedAfter: [pacMan moveRight].
 	
 	
+]
+
+{ #category : #tests }
+PmGameTest >> testMovingToCellWithPebble [
+	| cell cellAbove initialScore |
+	cell := pacMan cell.
+	initialScore := pacMan score.
+	cellAbove := cell neighborUp.
+	cellAbove add: PmPebble new.
+	pacMan moveUp.
+	self assertPacManAloneIn: cellAbove.
+	self assert: pacMan score equals: initialScore + 1.
 ]
 
 { #category : #tests }

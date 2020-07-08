@@ -1,23 +1,23 @@
 Class {
-	#name : #PmNullCell,
+	#name : #PmWallCell,
 	#superclass : #Object,
 	#classInstVars : [
 		'defaultInstance'
 	],
-	#category : #'PacMan-Kernel'
+	#category : #'PacMan-Models'
 }
 
 { #category : #'instance creation' }
-PmNullCell class >> defaultInstance [
+PmWallCell class >> defaultInstance [
 	^defaultInstance ifNil: [ defaultInstance := self new ]
 ]
 
 { #category : #'adding/removing' }
-PmNullCell >> add: anObject [
+PmWallCell >> add: anObject [
 	^self
 ]
 
 { #category : #'adding/removing' }
-PmNullCell >> remove: anObject [
+PmWallCell >> remove: anObject [
 	^self
 ]

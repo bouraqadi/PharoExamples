@@ -1,28 +1,32 @@
 Class {
 	#name : #PmPacMan,
-	#superclass : #Object,
+	#superclass : #PmElement,
 	#instVars : [
-		'cell'
+		'score'
 	],
-	#category : #'PacMan-Kernel'
+	#category : #'PacMan-Models'
 }
 
-{ #category : #accessing }
-PmPacMan >> cell [
-	^ cell
-]
-
-{ #category : #accessing }
-PmPacMan >> cell: newCell [
-	cell remove: self.
-	cell := newCell.
-
+{ #category : #interacting }
+PmPacMan >> incrementScore [
+	score := score + 1
 ]
 
 { #category : #initialization }
 PmPacMan >> initialize [
 	super initialize.
-	cell := PmNullCell defaultInstance.
+	score := 0.
+]
+
+{ #category : #interacting }
+PmPacMan >> interactWith: anObject [
+	anObject interactWithPacMan: self
+]
+
+{ #category : #interacting }
+PmPacMan >> interactWithPebble: aPubble [
+	self incrementScore.
+
 ]
 
 { #category : #moving }
@@ -43,4 +47,14 @@ PmPacMan >> moveRight [
 { #category : #moving }
 PmPacMan >> moveUp [
 	cell neighborUp add: self
+]
+
+{ #category : #accessing }
+PmPacMan >> score [
+	^ score
+]
+
+{ #category : #accessing }
+PmPacMan >> score: anObject [
+	score := anObject
 ]

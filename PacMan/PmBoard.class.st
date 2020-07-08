@@ -4,12 +4,12 @@ Class {
 	#instVars : [
 		'cells'
 	],
-	#category : #'PacMan-Kernel'
+	#category : #'PacMan-Models'
 }
 
 { #category : #accessing }
 PmBoard >> addWallAtRow: row column: column [
-	cells at: row at: column put: PmNullCell defaultInstance.
+	cells at: row at: column put: PmWallCell defaultInstance.
 ]
 
 { #category : #accessing }
@@ -19,7 +19,7 @@ PmBoard >> cellAtRandom [
 
 { #category : #accessing }
 PmBoard >> cellAtRow: row column: column [
-	^[cells at: row at: column] on: Error do: [ PmNullCell defaultInstance ]
+	^[cells at: row at: column] on: Error do: [ PmWallCell defaultInstance ]
 ]
 
 { #category : #initialization }
@@ -28,7 +28,7 @@ PmBoard >> initialize [
 	cells := Array2D 
 		rows: self length 
 		columns: self length
-		tabulate: [: row : column | PmCell board: self row: row column: column].
+		tabulate: [: row : column | PmNavigableCell board: self row: row column: column].
 ]
 
 { #category : #initialization }

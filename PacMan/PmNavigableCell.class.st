@@ -1,5 +1,5 @@
 Class {
-	#name : #PmCell,
+	#name : #PmNavigableCell,
 	#superclass : #Object,
 	#instVars : [
 		'contents',
@@ -7,11 +7,11 @@ Class {
 		'row',
 		'column'
 	],
-	#category : #'PacMan-Kernel'
+	#category : #'PacMan-Models'
 }
 
 { #category : #'as yet unclassified' }
-PmCell class >> board: board row: row column: column [
+PmNavigableCell class >> board: board row: row column: column [
 	^self new
 		board: board;
 		row: row;
@@ -20,79 +20,82 @@ PmCell class >> board: board row: row column: column [
 ]
 
 { #category : #accessing }
-PmCell >> add: anObject [
+PmNavigableCell >> add: anObject [
+	self contents do: [ : each | 
+		each interactWith: anObject.
+		anObject interactWith: each ].
 	anObject cell: self.
 	self contents add: anObject.
 
 ]
 
 { #category : #accessing }
-PmCell >> board [
+PmNavigableCell >> board [
 	^ board
 ]
 
 { #category : #accessing }
-PmCell >> board: anObject [
+PmNavigableCell >> board: anObject [
 	board := anObject
 ]
 
 { #category : #accessing }
-PmCell >> column [
+PmNavigableCell >> column [
 	^ column
 ]
 
 { #category : #accessing }
-PmCell >> column: anObject [
+PmNavigableCell >> column: anObject [
 	column := anObject
 ]
 
 { #category : #accessing }
-PmCell >> contents [
+PmNavigableCell >> contents [
 	^ contents
 ]
 
 { #category : #accessing }
-PmCell >> contents: anObject [
+PmNavigableCell >> contents: anObject [
 	contents := anObject
 ]
 
 { #category : #initialization }
-PmCell >> initialize [
+PmNavigableCell >> initialize [
 	super initialize.
 	contents := Set new.
 ]
 
 { #category : #accessing }
-PmCell >> neighborDown [
+PmNavigableCell >> neighborDown [
 	^self board cellAtRow: self row + 1 column: self column
 ]
 
 { #category : #accessing }
-PmCell >> neighborLeft [
+PmNavigableCell >> neighborLeft [
 	^self board cellAtRow: self row column: self column - 1
 ]
 
 { #category : #accessing }
-PmCell >> neighborRight [
+PmNavigableCell >> neighborRight [
 	^self board cellAtRow: self row column: self column + 1
 ]
 
 { #category : #accessing }
-PmCell >> neighborUp [
+PmNavigableCell >> neighborUp [
 	^self board cellAtRow: self row - 1 column: self column
 ]
 
 { #category : #accessing }
-PmCell >> remove: anObject [ 
+PmNavigableCell >> remove: anObject [ 
 	self contents remove: anObject.
 ]
 
 { #category : #accessing }
-PmCell >> row [
+PmNavigableCell >> row [
 	^ row
 ]
 
 { #category : #accessing }
-PmCell >> row: anObject [
+PmNavigableCell >> row: anObject [
 	row := anObject
 ]
